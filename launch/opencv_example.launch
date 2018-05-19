@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+  Example launch. 
+
+  Usage: 
+-->
+<launch>
+  
+<!--   <arg name="robot_ip"/> -->
+
+  <!-- opencv camera -->
+  <node name="cv_camera" pkg="cv_camera" type="cv_camera_node"/>
+  
+  <!-- ur common -->
+  <include file="$(find ur_gazebo)/launch/ur3.launch">
+  </include>
+
+  <!-- opencv camera -->
+  <node name="opencv_ex2" pkg="opencv_example2" type="opencv_example2_node"/>
+  
+</launch>
